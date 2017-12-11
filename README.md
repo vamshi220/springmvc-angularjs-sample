@@ -1,6 +1,6 @@
 # Spring MVC | AngularJs Sample App #
 
-A sample project to demonstrate how a web app can be built using a Spring MVC / AngularJs stack. The frontend is based on Angular, lodash and requirejs, and the backend is composed of JSON REST web services based on Spring MVC / JPA, secured with Spring Security. See a further description of the app on this [blog post](http://blog.jhades.org/developing-a-modern-java-8-web-app-with-spring-mvc-and-angularjs/).
+A sample project to demonstrate how a web app can be built using a Spring MVC / AngularJs stack.The frontend is based on Angular, lodash and requirejs, and the backend is composed of JSON REST web services based on Spring MVC / JPA, secured with Spring Security.
 
 ### Installation dependencies ###
 
@@ -29,7 +29,7 @@ The spring test profile will activate an in-memory database. After the server st
 
 To see a user with existing data (16 meals, 8 days from 1st of January 2017 to the 8th), login with the following credentials:
 
-    username: test123 / password: Password2
+    username: system / password: manager
 
 ### Frontend Overview ###
 
@@ -37,7 +37,6 @@ The sample project is a web application with an AngularJs-based frontend and a S
 
 On the frontend, these libraries where used (besides Angular):  [Yahoo PureCss](http://http://purecss.io/) (pure CSS baseline)  and [lodash](https://lodash.com/) for functional data manipulation. The module system [require.js](http://requirejs.org/) was used to load frontend dependencies. The dependencies where  obtained via [bower](http://bower.io/).
 
-The angular module [angular-messages](https://egghead.io/lessons/angularjs-introduction-to-ng-messages-for-angularjs) was used for frontend form validation, and this [jQuery plugin](http://plugins.jquery.com/datetimepicker/) was used as the datetimepicker component. 
 
 ### Backend Overview ###
 
@@ -53,7 +52,7 @@ The Spring Security Form Login mode was used, with fallback to HTTP-Basic Authen
 
 Frontend validations are for user convenience only, and where also made on the backend. The use of Angular gives good protection against common problems like [cross-site scripting or HTML injection](https://docs.angularjs.org/misc/faq). The queries on the backend are made using either named queries or the criteria API, which gives good protection against SQL injection.
 
-The password policy is of at least 6 characters with minimum one lower case, one upper case and one numeric. The passwords are not stored in the database in plain text but in a digested form, using the Spring Security [Bcrypt](http://docs.spring.io/autorepo/docs/spring-security/3.2.0.RELEASE/apidocs/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.html) password encoder (transparently includes a salt).
+The password policy is of at least 8 characters with minimum one lower case, one upper case and one numeric. The passwords are not stored in the database in plain text but in a digested form, using the Spring Security [Bcrypt](http://docs.spring.io/autorepo/docs/spring-security/3.2.0.RELEASE/apidocs/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.html) password encoder (transparently includes a salt).
 
 #### REST API ####
 
@@ -116,6 +115,6 @@ The application can be started in HTTPS only mode by using the flag httpsOnly=tr
 
 The project can be accessed via this URL:
 
-    https://localhost:8443/
+    https://localhost:5121/
     
 A warning message is displayed because the test certificate is not accepted by the browser, by accepting the certificate the login page is then displayed.
